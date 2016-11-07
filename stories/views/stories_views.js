@@ -8,12 +8,13 @@ var all_stories = function(){
  //         return next(err);
  //       }
  //		});
- 	Story.find({}, function(err, users) {
-       if (err) {
-         return next(err);
-       } else {
-         return JSON.stringify(users);
-	}});
+ // 	Story.find({}, function(err, users) {
+ //       if (err) {
+ //         return next(err);
+ //       } else {
+ //         return users;
+	// }});
+	return "LOL";
  };
 
-module.exports = all_stories();
+module.exports = all_stories;

@@ -8,7 +8,10 @@
     <div ng-repeat="post in posts">
       {{post}}
     </div>
-    <%=data%>
+    <div id="react-main-mount">
+      <%- reactOutput %>
+    </div>
     <button ng-click="addPost()">Post</button>
+    <script src="/main.js"></script>
   </body>
 </html>
