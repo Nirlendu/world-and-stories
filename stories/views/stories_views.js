@@ -1,20 +1,14 @@
 var mongoose = require('../../config/mongoose');
 var Story = mongoose.model('story');
 
-var all_stories = function(){
- // 	var story = new Story({'story_title':'One','story_content':'Two'});
- // 	story.save(function(err) {
- //       if (err) {
- //         return next(err);
- //       }
- //		});
- // 	Story.find({}, function(err, users) {
- //       if (err) {
- //         return next(err);
- //       } else {
- //         return users;
-	// }});
-	return "LOL";
- };
+var retrieveStories = function(uname, callback) {
+  Story.find({}, function(err, stories) {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, stories);
+    }
+  });
+};
 
-module.exports = all_stories;
+module.exports = retrieveStories;

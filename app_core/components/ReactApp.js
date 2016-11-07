@@ -2,20 +2,26 @@
 
 var React = require('react');
 
-var all_stories = require('../../stories/views/stories_views')();
-var mongoose = require('../../config/mongoose');
-var Story = mongoose.model('story');
+var all_stories = require('../../stories/views/stories_views');
 
 var resultsPerPage = 200;
 
-var ReactApp = React.createClass({
+var elements;
 
-      render: function () {
-        return (
-          <div>{all_stories}</div>
-          )
-      }
-  });
+all_stories({}, function(err, stories) {
+  if (err) {
+    console.log(err);
+  }
+  elements = JSON.stringify(stories);
+});
+
+var ReactApp = React.createClass({
+    render: function () {
+      return (
+        <div>{elements}</div>
+        )
+    }
+});
 
 /* Module.exports instead of normal dom mounting */
 module.exports = ReactApp;
