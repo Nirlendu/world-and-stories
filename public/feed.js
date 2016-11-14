@@ -38,9 +38,9 @@ var Feed = React.createClass({
 
 var FeedListOne = React.createClass({
   render: function() {
-    var feedStories = this.props.storiesOne.map(function(story) {
+    var feedStories = this.props.feedOne.map(function(story) {
       return (
-        <Stories title={story.title} content={story.content} key={story.id}></Stories>
+        <Stories title={story.author} content={story.text} key={story.id}></Stories>
       );
     });
     return (
@@ -50,5 +50,17 @@ var FeedListOne = React.createClass({
     );
   }
 });
+
+var FeedListOneState = function(state) {
+  return {
+    feedOne: state.feedOne
+  }
+}
+
+var connect = ReactRedux.connect;
+
+FeedListOne = connect(
+  FeedListOneState
+)(FeedListOne)
 
 module.exports = Feed;
