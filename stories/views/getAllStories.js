@@ -1,7 +1,7 @@
 var mongoose = require('../../config/mongoose');
 var Story = mongoose.model('story');
 
-var retrieveStories = function(uname, callback) {
+var retrieveAllStories = function(uname, callback) {
   Story.find({}, function(err, stories) {
     if (err) {
       callback(err, null);
@@ -11,4 +11,4 @@ var retrieveStories = function(uname, callback) {
   });
 };
 
-module.exports = retrieveStories;
+module.exports = retrieveAllStories;
