@@ -40,7 +40,7 @@ var FeedListOne = React.createClass({
   render: function() {
     var feedStories = this.props.feedOne.map(function(story) {
       return (
-        <Stories title={story.author} content={story.text} key={story.id}></Stories>
+        <Stories title={story.story_title} content={story.story_content} key={story.id}></Stories>
       );
     });
     return (

@@ -15,6 +15,7 @@ router.get(['/', '/another-page'], function(req, res) {
   var RouterContext = React.createFactory(ReactRouter.RouterContext);
   var Provider = React.createFactory(require('react-redux').Provider);
   var routes = require('../../public/routes.js').routes
+  var storiesLogic = require('../../stories/logic')
   var store = require('../../public/redux-store');
 
   fs.readFileAsync(COMMENTS_FILE).then(
@@ -27,6 +28,8 @@ router.get(['/', '/another-page'], function(req, res) {
       url: "/api/stories",
       pollInterval: 2000
     }
+
+    console.log(storiesLogic);
 
     store = store.configureStore(initialState);
 
@@ -49,14 +52,10 @@ router.get(['/', '/another-page'], function(req, res) {
 });
 
 
+//var storiesLogic = require('../../stories/logic')
+
 router.get('/api/stories', function(req, res) {
-  fs.readFile(COMMENTS_FILE, function(err, data) {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-    res.json(JSON.parse(data));
-  });
+  res.json(storiesLogic);
 });
 
 
