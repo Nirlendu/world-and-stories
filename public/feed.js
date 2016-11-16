@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactRedux = require('react-redux');
 var marked = require('marked');
+var connect = ReactRedux.connect;
 
 var Stories = React.createClass({
   render: function() {
@@ -56,8 +57,6 @@ var FeedListOneState = function(state) {
     feedOne: state.feedOne
   }
 }
-
-var connect = ReactRedux.connect;
 
 FeedListOne = connect(
   FeedListOneState
