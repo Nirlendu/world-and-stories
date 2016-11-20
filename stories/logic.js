@@ -1,3 +1,4 @@
+
 var retrieveAllStories = require('./views/getAllStories')
 
 var rankingStories = function(){
