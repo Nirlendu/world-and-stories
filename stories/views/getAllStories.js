@@ -1,6 +1,7 @@
 
 var mongoose = require('../../config/mongoose');
 mongoose.Promise = require('bluebird');
+
 var Story = mongoose.model('story');
 
 //var Promise = require("bluebird");
