@@ -5,7 +5,6 @@ mongoose.Promise = require('bluebird');
 var Story = mongoose.model('story');
 
 //var Promise = require("bluebird");
-//var Story = Promise.promisifyAll(mongoose.model('story'););
 
 // var retrieveAllStories = function(uname, callback) {
 //   Story.find({}, function(err, stories) {
